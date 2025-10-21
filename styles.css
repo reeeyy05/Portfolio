@@ -5,34 +5,33 @@
 }
 
 :root {
-    --color-fondo-principal: linear-gradient(135deg, #2A004A, #1E1E4A);
-    --color-fondo-tarjeta: #2D2D44;
-    --color-texto-principal: #E0E7FF;
-    --color-texto-secundario: #A3BFFA;
-    --color-resaltado: #00FFCC;
-    --color-borde-suave: rgba(0, 255, 204, 0.2);
-    --color-sombra: rgba(0, 0, 0, 0.3);
+    --color-fondo: #0a0f2a;
+    --color-tarjetas: #121a3a; /* Para las tarjetas */
+    --color-texto: #ffffff;
+    --color-texto-secundario: #a0b0d0;
+    --color-titulos: #4d7cff;
+    --color-borde: rgba(77, 124, 255, 0.2);
+    --color-sombra: rgba(0, 0, 0, 0.2);
     --fuente-principal: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
 body {
     font-family: var(--fuente-principal);
-    background: var(--color-fondo-principal);
-    color: var(--color-texto-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    /*Para evitar barras horizontales*/
 }
 
 .cabecera {
     position: relative;
     text-align: center;
     padding: 25px 0;
-    background: linear-gradient(90deg, rgba(0, 255, 204, 0.3), transparent);
-    border-bottom: 1px solid var(--color-borde-suave);
-    box-shadow: 0 2px 10px var(--color-sombra);
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: 0 2px var(--color-sombra);
 }
 
 .contenedor-logo {
@@ -45,18 +44,15 @@ body {
     width: 140px;
     height: 80px;
     border-radius: 8px;
-    object-fit: cover;
 }
 
 .nombre-alumno {
     font-size: 32px;
-    margin: 0;
-    color: var(--color-resaltado);
+    color: var(--color-titulos);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 0 100px;
-    text-shadow: 0 0 10px rgb(0, 255, 204, 0.7);
 }
 
 .contenedor-principal {
@@ -75,13 +71,12 @@ body {
     margin-bottom: 16px;
     font-size: 24px;
     font-weight: 600;
-    color: var(--color-resaltado);
+    color: var(--color-titulos);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Contenedor de tarjetas de ejercicios */
 .lista-ejercicios {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -89,20 +84,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: rgba(45, 45, 68, 0.8);
+    background-color: rgba(18, 26, 58, 0.7);
     border-radius: 15px;
+    box-shadow: 0 4px 12px var(--color-sombra);
 }
 
-@media (min-width: 900px) {
-    .lista-ejercicios {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Tarjeta individual de ejercicio */
 .tarjeta-ejercicio {
-    background: var(--color-fondo-tarjeta);
-    border: 1px solid var(--color-borde-suave);
+    background-color: var(--color-tarjetas);
+    border: 1px solid var(--color-borde);
     padding: 16px;
     border-radius: 10px;
     min-height: 120px;
@@ -110,58 +99,60 @@ body {
     flex-direction: column;
     gap: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px var(--color-sombra);
+    box-shadow: 0 4px var(--color-sombra);
 }
 
 .tarjeta-ejercicio:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 20px var(--color-sombra);
-    background: #333366;
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 15px var(--color-sombra);
+    background-color: #172248;
 }
 
-/* Título del ejercicio */
 .titulo-ejercicio {
     margin: 0;
     font-size: 16px;
-    font-weight: 600;
-    color: var(--color-texto-principal);
+    color: var(--color-texto);
     text-transform: capitalize;
 }
 
-/* Descripción del ejercicio */
 .descripcion-ejercicio {
     margin: 0;
     color: var(--color-texto-secundario);
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.4;
 }
 
-/* Contenedor de iconos */
 .iconos-ejercicio {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-top: auto;
 }
 
 .icono-link {
     color: var(--color-texto-secundario);
-    font-size: 18px;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    transition: all 0.25s ease;
 }
 
 .icono-link:hover {
-    color: var(--color-resaltado);
-    transform: scale(1.2);
+    color: var(--color-titulos);
+    transform: scale(1.15);
 }
 
 footer {
     padding: 20px 0;
     text-align: center;
-    background: rgba(42, 0, 74, 0.9);
-    border-top: 1px solid var(--color-borde-suave);
-    color: var(--color-texto-secundario);
+    background-color: #0d1328;
+    border-top: 1px solid var(--color-borde);
     font-size: 12px;
     margin-top: auto;
+}
+
+@media (min-width: 900px) {
+    .lista-ejercicios {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -171,17 +162,11 @@ footer {
 
     .nombre-alumno {
         font-size: 1.4rem;
-        padding: 0 60px;
     }
 
     .contenedor-logo img {
         width: 40px;
         height: 40px;
-    }
-
-    .lista-ejercicios {
-        grid-template-columns: 1fr;
-        padding: 10px;
     }
 
     .titulo-seccion {
