@@ -5,8 +5,8 @@
 }
 
 :root {
-    --color-fondo: #0a0f2a;
-    --color-tarjetas: #121a3a; /* Para las tarjetas */
+    --color-fondo: #0f1536;
+    --color-tarjetas: #121a3a;
     --color-texto: #ffffff;
     --color-texto-secundario: #a0b0d0;
     --color-titulos: #4d7cff;
@@ -29,7 +29,7 @@ body {
     position: relative;
     text-align: center;
     padding: 25px 0;
-    background-color: var(--color-fondo);
+    background-color: #0a0f2a;
     border-bottom: 1px solid var(--color-borde);
     box-shadow: 0 2px var(--color-sombra);
 }
